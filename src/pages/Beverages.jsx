@@ -1,43 +1,34 @@
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
-import { FaCoffee } from "react-icons/fa";
-import { FaGlassWater } from "react-icons/fa6";
-import { GiMilkCarton } from "react-icons/gi";
-
-
 function Beverages() {
 
-
-  const items = [
+  const beverages = [
 
     {
-      name:"Coffee",
-      icon:<FaCoffee size={75} color="#8b4513" />,
-      path:"/coffee"
+      name: "Coffee",
+      image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
+      path: "/coffee"
     },
 
-
     {
-      name:"Fresh Juice",
-      icon:<FaGlassWater size={75} color="#ff8c00" />,
-      path:"/juice"
+      name: "Fresh Juice",
+      image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=600",
+      path: "/juice"
     },
 
-
     {
-      name:"Milk Shake",
-      icon:<GiMilkCarton size={75} color="#ff69b4" />,
-      path:"/milkshake"
+      name: "Milk Shake",
+      image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600",
+      path: "/milkshake"
     },
-
-
     {
-      name:"Cool Drinks",
-      icon:<FaGlassWater size={75} color="#1e90ff" />,
-      path:"/cooldrinks"
-    }
+  name: "Cool Drinks",
+  image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600",
+  path: "/cooldrinks"
+}
 
+   
   ];
 
 
@@ -48,26 +39,28 @@ function Beverages() {
 
       <Navbar />
 
-
       <div
 
         style={{
+
           minHeight:"100vh",
           background:"#fff7ef",
           padding:"40px"
+
         }}
 
       >
 
-
         <h1
 
           style={{
+
             textAlign:"center",
             color:"#800000",
-            marginBottom:"40px",
             fontSize:"40px",
+            marginBottom:"40px",
             fontWeight:"bold"
+
           }}
 
         >
@@ -78,116 +71,118 @@ function Beverages() {
 
 
 
-
         <div
 
           style={{
+
             display:"grid",
             gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))",
             gap:"30px"
+
           }}
 
         >
 
+          {
 
+            beverages.map((item,index)=>(
 
-        {
-          items.map((item,index)=>(
+              <div
 
-
-            <div
-
-              key={index}
-
-              style={{
-                background:"white",
-                padding:"35px",
-                borderRadius:"20px",
-                textAlign:"center",
-                boxShadow:"0 5px 15px rgba(0,0,0,0.2)",
-                transition:"0.3s",
-                cursor:"pointer"
-              }}
-
-
-              onMouseEnter={(e)=>{
-                e.currentTarget.style.transform="translateY(-10px)";
-              }}
-
-
-              onMouseLeave={(e)=>{
-                e.currentTarget.style.transform="translateY(0)";
-              }}
-
-            >
-
-
-
-              {item.icon}
-
-
-
-
-              <h2
+                key={index}
 
                 style={{
-                  marginTop:"20px",
-                  color:"#333"
+
+                  background:"#fff",
+                  padding:"30px",
+                  borderRadius:"20px",
+                  textAlign:"center",
+                  boxShadow:"0 5px 15px rgba(0,0,0,0.2)",
+                  transition:"0.3s"
+
+                }}
+
+                onMouseEnter={(e)=>{
+                  e.currentTarget.style.transform="translateY(-10px)";
+                }}
+
+                onMouseLeave={(e)=>{
+                  e.currentTarget.style.transform="translateY(0)";
                 }}
 
               >
 
-                {item.name}
+                <img
 
-              </h2>
+                  src={item.image}
 
-
-
-
-              <Link to={item.path}>
-
-                <button
+                  alt={item.name}
 
                   style={{
+
+                    width:"160px",
+                    height:"160px",
+                    objectFit:"cover",
+                    borderRadius:"15px"
+
+                  }}
+
+                />
+
+                <h2
+
+                  style={{
+
                     marginTop:"20px",
-                    padding:"12px 25px",
-                    background:"#800000",
-                    color:"white",
-                    border:"none",
-                    borderRadius:"10px",
-                    cursor:"pointer",
-                    fontWeight:"bold"
+                    color:"#333"
+
                   }}
 
                 >
 
-                  View Varieties
+                  {item.name}
 
-                </button>
+                </h2>
 
-              </Link>
+                <Link to={item.path}>
 
+                  <button
 
+                    style={{
 
-            </div>
+                      marginTop:"15px",
+                      padding:"12px 25px",
+                      background:"#800000",
+                      color:"#fff",
+                      border:"none",
+                      borderRadius:"10px",
+                      cursor:"pointer",
+                      fontWeight:"bold"
 
+                    }}
 
-          ))
-        }
+                  >
 
+                    View Varieties
 
+                  </button>
+
+                </Link>
+
+              </div>
+
+            ))
+
+          }
 
         </div>
 
-
       </div>
-
 
     </>
 
-  )
+  );
 
 }
-
 
 export default Beverages;

@@ -1,30 +1,25 @@
 import Navbar from "../components/Navbar";
-import { FaGlassWater } from "react-icons/fa6";
-
 
 function Juice() {
 
-
-  const items = [
+  const varieties = [
 
     {
-      name:"Orange Juice",
-      icon:<FaGlassWater size={75} color="#ff8c00" />
+      name: "Orange Juice",
+      image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600"
     },
 
     {
-      name:"Mango Juice",
-      icon:<FaGlassWater size={75} color="#ffa500" />
+      name: "Mango Juice",
+      image: "https://wallpaperaccess.com/full/9256942.jpg"
     },
 
     {
-      name:"Lemon Juice",
-      icon:<FaGlassWater size={75} color="#ffd700" />
+      name: "Lemon Juice",
+      image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600"
     }
 
   ];
-
-
 
   return (
 
@@ -32,86 +27,112 @@ function Juice() {
 
       <Navbar />
 
-
       <div
         style={{
-          minHeight:"100vh",
-          background:"#fff7ef",
-          padding:"40px"
+          minHeight: "100vh",
+          background: "#fff7ef",
+          padding: "40px"
         }}
       >
 
-
         <h1
           style={{
-            textAlign:"center",
-            color:"#800000",
-            marginBottom:"40px"
+            textAlign: "center",
+            color: "#800000",
+            marginBottom: "40px",
+            fontSize: "40px",
+            fontWeight: "bold"
           }}
         >
           🍹 Juice Varieties
         </h1>
 
-
-
         <div
           style={{
-            display:"grid",
-            gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))",
-            gap:"30px"
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+            gap: "30px"
           }}
         >
 
+          {
 
-        {
-          items.map((item,index)=>(
+            varieties.map((item, index) => (
 
+              <div
 
-            <div
-              key={index}
+                key={index}
 
-              style={{
-                background:"white",
-                padding:"35px",
-                borderRadius:"20px",
-                textAlign:"center",
-                boxShadow:"0 5px 15px rgba(0,0,0,0.2)"
-              }}
-
-            >
-
-
-              {item.icon}
-
-
-              <h2
                 style={{
-                  marginTop:"20px",
-                  color:"#333"
+
+                  background: "white",
+                  padding: "35px",
+                  borderRadius: "20px",
+                  textAlign: "center",
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+                  transition: "0.3s",
+                  cursor: "pointer"
+
                 }}
+
+                onMouseEnter={(e)=>{
+                  e.currentTarget.style.transform="translateY(-10px)";
+                }}
+
+                onMouseLeave={(e)=>{
+                  e.currentTarget.style.transform="translateY(0)";
+                }}
+
               >
-                {item.name}
-              </h2>
 
+                <img
 
-            </div>
+                  src={item.image}
 
+                  alt={item.name}
 
-          ))
-        }
+                  style={{
 
+                    width:"170px",
+                    height:"170px",
+                    objectFit:"cover",
+                    borderRadius:"15px"
+
+                  }}
+
+                />
+
+                <h2
+
+                  style={{
+
+                    marginTop:"20px",
+                    color:"#333",
+                    fontSize:"24px",
+                    fontWeight:"bold"
+
+                  }}
+
+                >
+
+                  {item.name}
+
+                </h2>
+
+              </div>
+
+            ))
+
+          }
 
         </div>
 
-
       </div>
-
 
     </>
 
-  )
+  );
 
 }
-
 
 export default Juice;
