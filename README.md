@@ -1,16 +1,45 @@
-# React + Vite
+# 🍛 Biryani House
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A restaurant menu website built using React.  
+Users can explore Non Veg, Veg, Beverages and Desserts categories with different food varieties and images.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React.js
+- Vite
+- JavaScript (ES6+)
+- React Router DOM
+- HTML5
+- CSS3
+- React Icons
+- Git
+- GitHub
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive food menu design
+- Category based navigation
+- Food variety pages
+- Hover animations
+- Food images display
+- Modern restaurant UI
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+- components/
+- pages/
+
+public/
+- images/
+
+## ▶️ Run Project
+
+Install packages:
+
+npm install
+
+
+Start development server:
+
+Biryani House 🍽️
